@@ -36,14 +36,15 @@ int main(void){
 
 	node *current = make_node();
 	node *head = current;
+	printf("Make another node? ");
+	scanf("%d", &another);
 	while(another==1){
-		printf("Make another node? ");
-		scanf("%d", &another);
-		if(!another) {break;}
 		node *next = make_node();
 		connect_nodes(current, next);
 		current = next;
-
+		printf("Make another node? ");
+		scanf("%d", &another);
+	
 
 }
 	enumerate_list(head);
