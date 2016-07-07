@@ -65,3 +65,25 @@ node *insert_node(node *head, node *newnode, int position){
 	return head;
 }
 
+node *remove_node(node *head, int position){
+	node *current = head;
+	while (position-1>0 && (*current).next!=NULL){
+		position--;
+		current=(*current).next;
+}
+	if ((*current).next==NULL){
+		return NULL;
+}
+	else{
+		if(( (*( (*current).next)).next)==NULL){
+			((*current).next=NULL);
+}
+	else{
+		node *over = ( (*( (*current).next)).next);
+		(*current).next = over;
+}
+	return head;
+}
+
+}
+

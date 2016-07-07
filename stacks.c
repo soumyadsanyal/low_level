@@ -14,4 +14,6 @@ int main(void){
 	node *extra = make_node();
 	head = insert_node(head, extra, 2);
 	enumerate_list(head);
+	head = remove_node(head, 5);
+	enumerate_list(head);
 }
