@@ -29,3 +29,39 @@ int connect_nodes(node *first, node *second){
 	return 0;
 }
 
+node *make_linked_list(void){
+	int another = 1;
+
+	node *current = make_node();
+	node *head = current;
+	printf("Make another node? ");
+	scanf("%d", &another);
+	while(another==1){
+		node *next = make_node();
+		connect_nodes(current, next);
+		current = next;
+		printf("Make another node? ");
+		scanf("%d", &another);
+	
+
+}
+	return head;
+}
+
+node *insert_node(node *head, node *newnode, int position){
+	node *current = head;
+	while (position-1>0 && (*current).next!=NULL){
+		position--;
+		current=(*current).next;
+}
+	if ((*current).next == NULL){
+		return NULL;
+}
+	else{
+		node *over = (*current).next;
+		(*current).next = newnode;
+		(*newnode).next = over;
+}
+	return head;
+}
+

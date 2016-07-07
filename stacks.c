@@ -8,21 +8,10 @@
 
 
 int main(void){
-	
-	int another = 1;
 
-	node *current = make_node();
-	node *head = current;
-	printf("Make another node? ");
-	scanf("%d", &another);
-	while(another==1){
-		node *next = make_node();
-		connect_nodes(current, next);
-		current = next;
-		printf("Make another node? ");
-		scanf("%d", &another);
-	
-
-}
+	node *head = make_linked_list();	
+	enumerate_list(head);
+	node *extra = make_node();
+	head = insert_node(head, extra, 2);
 	enumerate_list(head);
 }
